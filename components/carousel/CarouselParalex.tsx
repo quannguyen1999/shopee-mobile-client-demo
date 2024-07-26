@@ -2,6 +2,7 @@ import { IMAGES_CAROUSEL } from "@/constants/datas";
 import { FlatList, View, StyleSheet, Animated } from "react-native";
 import CarouselItem from "./CarouselItem";
 import { useRef, useState } from "react";
+import Paginator from "./Paginator";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -32,6 +33,8 @@ const Carousel = () => {
         viewabilityConfig={viewConfig}
         ref={slideRef}
       />
+
+      <Paginator data={IMAGES_CAROUSEL} scrollX={scrollX}/>
     </View>
   );
 };
