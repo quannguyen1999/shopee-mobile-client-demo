@@ -1,32 +1,33 @@
-import { LIVE_CAROUSEL } from "@/constants/datas";
+import { FLASH_CAROUSEL, LIVE_CAROUSEL } from "@/constants/datas";
 import { Image } from "expo-image";
 import { StyleSheet, Animated, View, Text, FlatList } from "react-native";
 import { useRef, useState } from "react";
-import LiveItem from "./LiveItem";
+import FlashItem from "./FlashItem";
+
 interface LiveBodyProps {}
 
-const LiveBody = () => {
+const FlashBody = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef(null);
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
   return (
     <View style={styles.container}>
       <FlatList
-        data={LIVE_CAROUSEL}
+        data={FLASH_CAROUSEL}
         renderItem={(item) => {
-          return <LiveItem item={item.item} />;
+          return <FlashItem item={item.item} />;
         }}
         horizontal
         showsVerticalScrollIndicator
-        pagingEnabled
+        // pagingEnabled
         bounces={false}
         // keyExtractor={(item) => item.data}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          {
-            useNativeDriver: false,
-          }
-        )}
+        // onScroll={Animated.event(
+        //   [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+        //   {
+        //     useNativeDriver: false,
+        //   }
+        // )}
         scrollEventThrottle={32}
         // onViewableItemsChanged={(val) => {
         //   setCurrentIndex(val.viewableItems[0].index!);
@@ -38,7 +39,7 @@ const LiveBody = () => {
   );
 };
 
-export default LiveBody;
+export default FlashBody;
 
 const styles = StyleSheet.create({
   container: {

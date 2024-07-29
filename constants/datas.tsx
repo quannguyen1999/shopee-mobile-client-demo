@@ -121,3 +121,37 @@ export const LIVE_CAROUSEL = [
     live: 5
   },
 ];
+
+export const FLASH_CAROUSEL = [
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image: require("../assets/images/live/meo2.png"),
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product1.png"),
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+  },
+
+];

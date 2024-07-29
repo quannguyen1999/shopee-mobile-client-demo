@@ -2,6 +2,7 @@ import TitleCategory from "@/components/TitleCategory";
 import ScanBar from "@/components/bar/ScanBar";
 import Carousel from "@/components/carousel/CarouselParalex";
 import CategoryBody from "@/components/category/CategoryBody";
+import FlashBody from "@/components/flash/FlashBody";
 import LiveBody from "@/components/live/LiveBody";
 import { Image } from "expo-image";
 import {
@@ -17,6 +18,9 @@ const HomePage = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView} bounces={false}>
+      <TitleCategory text="FLASH SALE" />
+        <FlashBody />
+        
         <Carousel />
         <ScanBar />
         <CategoryBody />
@@ -24,7 +28,7 @@ const HomePage = () => {
         <HomeImageSale image={require("../../assets/images/sale/sale2.png")} />
         <TitleCategory text="ECOMMER LIVE SIÊU RẺ" />
         <LiveBody />
-        <TitleCategory text="FLASH SALE" />
+       
       </ScrollView>
     </SafeAreaView>
   );
