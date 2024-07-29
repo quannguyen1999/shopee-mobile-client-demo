@@ -8,11 +8,14 @@ import {
 interface PaginatorProps {
   data: any;
   scrollX: any;
+  backgroundColor?: string;
+  bottom?: number;
+  left?: number
 }
-const Paginator = ({ data, scrollX }: PaginatorProps) => {
+const Paginator = ({ data, scrollX, backgroundColor = 'white', bottom = 20, left = 33 }: PaginatorProps) => {
   const { width } = useWindowDimensions();
   return (
-    <View style={{ position: 'absolute', bottom: 20, left: '33%',flexDirection: "row", height: 14 }}>
+    <View style={{ position: 'absolute', bottom: bottom, left: `${left}%`,flexDirection: "row", height: 14 }}>
       {data.map((data: any, i: number) => {
         const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
         const dotWidth = scrollX.interpolate({
@@ -27,8 +30,8 @@ const Paginator = ({ data, scrollX }: PaginatorProps) => {
         });
         return (
           <Animated.View
-            key={data.image.toString()}
-            style={[styles.dot, { width: dotWidth, opacity }]}
+            key={i}
+            style={[styles.dot, { width: dotWidth, opacity, backgroundColor: backgroundColor }]}
           />
         );
       })}
@@ -42,7 +45,6 @@ const styles = StyleSheet.create({
   dot: {
     height: 4,
     borderRadius: 5,
-    backgroundColor: "white",
     marginHorizontal: 8,
   },
 });

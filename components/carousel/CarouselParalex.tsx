@@ -8,14 +8,12 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef(null);
-
   const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
   return (
     <View style={styles.container}>
       <FlatList
         data={IMAGES_CAROUSEL}
         renderItem={(item) => {
-        
           return <CarouselItem item={item.item} />;
         }}
         horizontal
@@ -43,10 +41,8 @@ export default Carousel;
 
 const styles = StyleSheet.create({
   container: {
-    height: "40%",
+    height: 200,
     width: "100%",
     backgroundColor: "red",
-    // flex: 3
-    // position: 'relative'
   },
 });

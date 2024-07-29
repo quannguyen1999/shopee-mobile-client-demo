@@ -5,11 +5,13 @@ const ScanBar = () => {
   return (
     <View style={styles.wrap}>
       <View style={styles.container}>
-        <View style={{
-            width: '20%',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
+        <View
+          style={{
+            width: "20%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <AntDesign name="scan1" size={30} color="gray" />
         </View>
         <View style={styles.childAContainer}>
@@ -21,7 +23,7 @@ const ScanBar = () => {
         </View>
         <View style={styles.childAContainer}>
           <View style={styles.childBContainer}>
-            <AntDesign name="smileo" size={24} color={BG_ORANGE_600}/>
+            <AntDesign name="smileo" size={24} color={BG_ORANGE_600} />
             <Text style={styles.childTitle}>600</Text>
           </View>
           <Text style={styles.childText}>Nhấn để nhận xu mỗi ngày</Text>
@@ -35,11 +37,19 @@ export default ScanBar;
 
 const styles = StyleSheet.create({
   wrap: {
-    height: 10,
+    marginTop: -29,
+    height: 70,
     width: "100%",
-    // backgroundColor: "orange",
     justifyContent: "center",
     alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
   container: {
     padding: 5,
@@ -52,7 +62,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   childAContainer: {
-    width: '40%',
+    width: "40%",
   },
   childBContainer: {
     flex: 1,
@@ -62,9 +72,9 @@ const styles = StyleSheet.create({
   },
   childTitle: {
     fontSize: 12,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   childText: {
-    fontSize: 10
-  }
+    fontSize: 10,
+  },
 });
