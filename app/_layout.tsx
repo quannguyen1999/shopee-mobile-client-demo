@@ -1,6 +1,10 @@
 import * as React from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
+import {
+  DefaultTheme,
+  NavigationContainer,
+  ThemeProvider,
+} from "@react-navigation/native";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeLayout from "./home/HomeLayout";
@@ -16,9 +20,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet } from "react-native";
 import { BG_ORANGE_500, BG_ORANGE_600, BG_SLAY_500 } from "@/constants/colors";
 import Feather from "@expo/vector-icons/Feather";
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
-
+const Stack = createNativeStackNavigator();
 const RootLayout = () => {
   //Define common
   const size = 28;
@@ -33,9 +38,12 @@ const RootLayout = () => {
           component={HomeLayout}
           options={() => ({
             title: "Home",
-            tabBarIcon: ({ color, focused }) => (
-              focused ? <AntDesign name="like2" size={size} color={color} /> : <Feather name="home" size={size} color={color} /> 
-            ),
+            tabBarIcon: ({ color, focused }) =>
+              focused ? (
+                <AntDesign name="like2" size={size} color={color} />
+              ) : (
+                <Feather name="home" size={size} color={color} />
+              ),
             headerShown: false,
             tabBarBadge: tabBarBadge,
             tabBarActiveTintColor: activeColor,
@@ -98,7 +106,11 @@ const RootLayout = () => {
           options={{
             title: "Thông Báo",
             tabBarIcon: ({ color, focused }) => (
-              <Ionicons name="notifications-outline"  size={size} color={color} />
+              <Ionicons
+                name="notifications-outline"
+                size={size}
+                color={color}
+              />
             ),
             headerShown: false,
             tabBarBadge: tabBarBadge,
@@ -117,7 +129,8 @@ const RootLayout = () => {
               <MaterialCommunityIcons
                 name="account-circle-outline"
                 size={size}
-                color={color} />
+                color={color}
+              />
             ),
             headerShown: false,
             tabBarBadge: tabBarBadge,
