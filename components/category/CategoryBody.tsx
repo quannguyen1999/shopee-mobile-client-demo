@@ -19,6 +19,7 @@ const Carousel = () => {
           return <CategoryItem item={item.item.data} />;
         }}
         horizontal
+        
         showsVerticalScrollIndicator
         pagingEnabled
         bounces={false}
@@ -40,7 +41,7 @@ const Carousel = () => {
       <Paginator
         data={CATEGORY_ITEMS}
         scrollX={scrollX}
-        backgroundColor="red"
+        // backgroundColor="red"
         bottom={-20}
         left={42}
       />

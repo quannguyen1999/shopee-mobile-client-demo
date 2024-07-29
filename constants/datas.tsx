@@ -127,31 +127,143 @@ export const FLASH_CAROUSEL = [
     price: 276000,
     name: 'Bịch cơm sườn',
     image: require("../assets/images/live/meo2.png"),
+    percentSale: 30,
+    isLike: true,
+    isMall: false,
+   
   },
   {
     price: 276000,
     name: 'Bịch cơm sườn',
     image:  require("../assets/images/product/product2.png"),
+    percentSale: 40,
+    isLike: false,
+    isMall: false,
   },
   {
     price: 276000,
     name: 'Bịch cơm sườn',
     image:  require("../assets/images/product/product3.png"),
+    percentSale: 10,
+    isLike: false,
+    isMall: false,
   },
   {
     price: 276000,
     name: 'Bịch cơm sườn',
     image:  require("../assets/images/product/product1.png"),
+    percentSale: 80,
+    isLike: false,
+    isMall: false,
   },
   {
     price: 276000,
     name: 'Bịch cơm sườn',
     image:  require("../assets/images/product/product2.png"),
+    percentSale: 50,
+    isLike: false,
+    isMall: false,
   },
   {
     price: 276000,
     name: 'Bịch cơm sườn',
     image:  require("../assets/images/product/product3.png"),
+    percentSale: 65,
+    isLike: false,
+    isMall: false,
   },
 
 ];
+
+export const PRODUCT_CAROUSEL = [
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image: require("../assets/images/live/meo2.png"),
+    percentSale: 30,
+    star: 4.9,
+    isLike: true,
+    isMall: false,
+    sold: 1000,
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+    percentSale: 0,
+    star: 5,
+    isLike: true,
+    isMall: true,
+    sold: 2000,
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+    percentSale: 30,
+    star: 4.9,
+    isLike: false,
+    isMall: true,
+    sold: 340,
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product1.png"),
+    percentSale: 30,
+    star: 4.9,
+    isLike: true,
+    isMall: false,
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+    percentSale: 30,
+    isLike: true,
+    isMall: false,
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+    percentSale: 65
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image: require("../assets/images/live/meo2.png"),
+    percentSale: 30
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+    percentSale: 40
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+    percentSale: 10
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product1.png"),
+    percentSale: 80
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product2.png"),
+    percentSale: 50
+  },
+  {
+    price: 276000,
+    name: 'Bịch cơm sườn',
+    image:  require("../assets/images/product/product3.png"),
+    percentSale: 65
+  },
+  
+]

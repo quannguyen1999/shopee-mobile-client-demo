@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
   container: {
     height: 200,
     width: "100%",
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
 });

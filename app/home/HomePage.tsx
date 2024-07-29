@@ -4,6 +4,7 @@ import Carousel from "@/components/carousel/CarouselParalex";
 import CategoryBody from "@/components/category/CategoryBody";
 import FlashBody from "@/components/flash/FlashBody";
 import LiveBody from "@/components/live/LiveBody";
+import ProductList from "@/components/product/ProductList";
 import { Image } from "expo-image";
 import {
   Text,
@@ -18,9 +19,6 @@ const HomePage = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView} bounces={false}>
-      <TitleCategory text="FLASH SALE" />
-        <FlashBody />
-        
         <Carousel />
         <ScanBar />
         <CategoryBody />
@@ -28,7 +26,10 @@ const HomePage = () => {
         <HomeImageSale image={require("../../assets/images/sale/sale2.png")} />
         <TitleCategory text="ECOMMER LIVE SIÊU RẺ" />
         <LiveBody />
-       
+        <TitleCategory text="FLASH SALE" />
+        <FlashBody />
+        <TitleCategory text="Gợi Ý Hôm Nay" />
+        <ProductList />
       </ScrollView>
     </SafeAreaView>
   );
