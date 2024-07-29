@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, useWindowDimensions } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Image } from "expo-image";
 interface CategoryItemProps {
   item: any;
 }
@@ -8,24 +9,44 @@ const CategoryItem = ({ item }: CategoryItemProps) => {
   return (
     <View style={[styles.container, { width }]}>
       {item.map((value: any, index: number) => (
-        <View
-          key={index}
-          style={{
-            // backgroundColor: "orange",
-            width: '25%',
-            height: '20%',
-            // borderWidth: 1,
-            // borderColor: 'black',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 5
-          }}
-        >
-          {value.icon}
-          <Text style={{
-            fontSize: 15,
-            fontWeight: 'bold'
-          }}>{value.title}</Text>
+        <View key={index} style={styles.childContainer}>
+          <View
+            style={{
+              borderWidth: 2,
+              borderColor: "gray",
+              padding: 6,
+              borderRadius: 10,
+            }}
+          >
+            <Image
+              style={[
+                {
+                  width: 50,
+                  height: 30,
+                  justifyContent: "center",
+                },
+              ]}
+              source={value.icon}
+              transition={1000}
+            />
+          </View>
+          <View
+            style={{
+              justifyContent: "center",
+              width: '90%'
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "bold",
+                textAlignVertical: "center",
+                textAlign: "center",
+              }}
+            >
+              {value.title}
+            </Text>
+          </View>
         </View>
       ))}
     </View>
@@ -39,6 +60,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    height: 260,
+    height: 290,
+  },
+  childContainer: {
+    width: "25%",
+    height: "25%",
+    // justifyContent: "center",
+    alignItems: "center",
+    gap: 3,
+    flexDirection: "column",
   },
 });

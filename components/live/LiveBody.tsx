@@ -1,22 +1,24 @@
-import { CATEGORY_ITEMS } from "@/constants/datas";
-import { FlatList, View, StyleSheet, Animated } from "react-native";
+import { LIVE_CAROUSEL } from "@/constants/datas";
+import { Image } from "expo-image";
+import { StyleSheet, Animated, View, Text, FlatList } from "react-native";
 import { useRef, useState } from "react";
-import CategoryItem from "./CategoryItem";
-import Paginator from "../carousel/Paginator";
+import LiveItem from "./LiveItem";
+interface LiveBodyProps {}
 
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+const LiveBody = () => {
+//   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const slideRef = useRef(null);
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={CATEGORY_ITEMS}
+        data={LIVE_CAROUSEL}
         renderItem={(item) => {
-          return <CategoryItem item={item.item.data} />;
+          return <LiveItem item={item.item} />;
         }}
         horizontal
         showsVerticalScrollIndicator
@@ -30,32 +32,20 @@ const Carousel = () => {
           }
         )}
         scrollEventThrottle={32}
-        onViewableItemsChanged={(val) => {
-          setCurrentIndex(val.viewableItems[0].index!);
-        }}
+        // onViewableItemsChanged={(val) => {
+        //   setCurrentIndex(val.viewableItems[0].index!);
+        // }}
         viewabilityConfig={viewConfig}
         ref={slideRef}
-      />
-
-      <Paginator
-        data={CATEGORY_ITEMS}
-        scrollX={scrollX}
-        backgroundColor="red"
-        bottom={-20}
-        left={42}
       />
     </View>
   );
 };
 
-export default Carousel;
+export default LiveBody;
 
 const styles = StyleSheet.create({
   container: {
-    height: 160,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    padding:1,
+    
   },
 });

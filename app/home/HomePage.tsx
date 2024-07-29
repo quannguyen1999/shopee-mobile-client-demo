@@ -1,6 +1,8 @@
+import TitleCategory from "@/components/TitleCategory";
 import ScanBar from "@/components/bar/ScanBar";
 import Carousel from "@/components/carousel/CarouselParalex";
 import CategoryBody from "@/components/category/CategoryBody";
+import LiveBody from "@/components/live/LiveBody";
 import { Image } from "expo-image";
 import {
   Text,
@@ -10,7 +12,6 @@ import {
   ScrollView,
   StatusBar,
 } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const HomePage = () => {
   return (
@@ -19,46 +20,35 @@ const HomePage = () => {
         <Carousel />
         <ScanBar />
         <CategoryBody />
-        <View>
-          <Image
-            style={[
-              styles.image,
-              {
-                marginTop: 18,
-                width: "100%",
-                height: 150,
-              },
-            ]}
-            source={require("../../assets/images/sale/sale1.png")}
-            contentFit="fill"
-          />
-        </View>
-
-        <View>
-          <Image
-            style={[
-              styles.image,
-              {
-                marginTop: 18,
-                width: "100%",
-                height: 150,
-              },
-            ]}
-            source={require("../../assets/images/sale/sale2.png")}
-            contentFit="fill"
-          />
-        </View>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
+        <HomeImageSale image={require("../../assets/images/sale/sale1.png")} />
+        <HomeImageSale image={require("../../assets/images/sale/sale2.png")} />
+        <TitleCategory text="ECOMMER LIVE SIÊU RẺ" />
+        <LiveBody />
+        <TitleCategory text="FLASH SALE" />
       </ScrollView>
     </SafeAreaView>
+  );
+};
+
+interface HomeImageSale {
+  image: any;
+}
+const HomeImageSale = ({ image }: HomeImageSale) => {
+  return (
+    <View>
+      <Image
+        style={[
+          styles.image,
+          {
+            marginTop: 18,
+            width: "100%",
+            height: 150,
+          },
+        ]}
+        source={image}
+        contentFit="fill"
+      />
+    </View>
   );
 };
 
@@ -74,10 +64,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: StatusBar.currentHeight,
   },
-  scrollView: {
-    // backgroundColor: "pink",
-    // marginHorizontal: 20,
-  },
+  scrollView: {},
   text: {
     fontSize: 42,
   },
