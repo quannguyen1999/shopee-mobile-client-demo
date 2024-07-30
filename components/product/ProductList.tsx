@@ -21,7 +21,7 @@ interface ProductListProps {}
 const ProductList = (props: any) => {
   const { navigation } = props.props;
   const navigatteToDetailPage = (id: number) => {
-    navigation.navigate("ProductLayout");
+    navigation.navigate("ProductDetailLayout");
   };
 
   return (

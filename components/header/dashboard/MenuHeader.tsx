@@ -8,7 +8,7 @@ const MenuHeader = () => {
     <View style={styles.container}>
       <View style={styles.inputContainer} >
         <EvilIcons name="search" size={24} color="black" />
-        <TextInput style={styles.input} placeholder="Sex toy xxx" />
+        <TextInput style={styles.input} placeholder="Đồ ngủ cho chó" placeholderTextColor="red"/>
         <EvilIcons name="camera" size={24} color="black" />
       </View>
 
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     padding: 1,
     borderColor: "white",
     backgroundColor: "white",
-    color: 'red'
+    color: 'red',
+    fontSize: 16
   },
   iconItem: {
     position: "relative",

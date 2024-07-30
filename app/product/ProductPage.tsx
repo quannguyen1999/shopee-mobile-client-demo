@@ -14,6 +14,10 @@ import { IStackScreenProps } from "@/modal/StackScreenProps";
 import CarouselProduct from "@/components/carousel/CarouselProduct";
 import ProductInfo from "@/components/product/detail/ProductInfo";
 import ProductList from "@/components/product/ProductList";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MallLayout from "../mall/MallLayout";
+
+
 const ProductPage: React.FunctionComponent<IStackScreenProps> = (
   props?: any
 ) => {
@@ -21,33 +25,40 @@ const ProductPage: React.FunctionComponent<IStackScreenProps> = (
     props.navigation.goBack();
   };
   return (
-    <ScrollView bounces={false}>
-    <View style={styles.container}>
-      <View>
-        <View style={styles.carousel}>
-          <CarouselProduct />
+    <>
+      <ScrollView bounces={false}>
+        <View style={styles.container}>
+          <View>
+            <View style={styles.carousel}>
+              <CarouselProduct />
+            </View>
+            <View
+              style={{
+                height: "auto",
+              }}
+            >
+              <ProductInfo />
+            </View>
+            <View
+              style={{
+                padding: 5,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  color: "gray",
+                }}
+              >
+                Sản phẩm liên quan
+              </Text>
+            </View>
+            <ProductList props={props} />
+          </View>
         </View>
-        <View
-          style={{
-            height: 'auto',
-          }}
-        >
-          <ProductInfo />
-        </View>
-        <View style={{
-          padding: 5,
-        }}>
-            <Text style={{
-              fontSize: 15,
-              fontWeight: 'bold',
-              color: 'gray'
-            }}>Sản phẩm liên quan</Text>
-        </View>
-        <ProductList props={props}/>
-       
-      </View>
-    </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 
