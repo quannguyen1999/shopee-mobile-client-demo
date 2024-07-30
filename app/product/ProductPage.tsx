@@ -12,7 +12,7 @@ import {
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { IStackScreenProps } from "@/modal/StackScreenProps";
 import CarouselProduct from "@/components/carousel/CarouselProduct";
-import ProductInfo from "@/components/product/ProductInfo";
+import ProductInfo from "@/components/product/detail/ProductInfo";
 import ProductList from "@/components/product/ProductList";
 const ProductPage: React.FunctionComponent<IStackScreenProps> = (
   props?: any
