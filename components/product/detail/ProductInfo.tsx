@@ -2,6 +2,7 @@ import { Text, View, StyleSheet } from "react-native";
 import ProductDate from "./ProductDate";
 import ProductMall from "./ProductMall";
 import ProductPrice from "./ProductPrice";
+import ProductButton from "./ProductButton";
 
 const ProductInfo = () => {
   return (
@@ -14,6 +15,9 @@ const ProductInfo = () => {
       </View>
       <View style={styleInfo.childContainer}>
         <ProductDate />
+      </View>
+      <View style={styleInfo.childContainer}>
+        <ProductButton />
       </View>
     </View>
   );
@@ -29,7 +33,7 @@ const styleInfo = StyleSheet.create({
     gap: 5,
   },
   childContainer: {
-    height: 25,
+    height: 40,
   },
 });
 

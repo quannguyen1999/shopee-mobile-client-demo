@@ -9,7 +9,7 @@ const ProductMall = () => {
         <Text style={styleMall.mallText}>Mall</Text>
       </View>
       <View style={styleMall.textView}>
-        <Text>Áo sexy guy</Text>
+      <Text>Áo sexy guy</Text>
       </View>
     </View>
   );
@@ -31,8 +31,7 @@ const styleMall = StyleSheet.create({
     color: "white",
   },
   textView: {
-    flex: 1,
-    justifyContent: "center",
+
   },
 });
 

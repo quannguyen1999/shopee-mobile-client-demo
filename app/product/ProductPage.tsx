@@ -29,7 +29,7 @@ const ProductPage: React.FunctionComponent<IStackScreenProps> = (
         </View>
         <View
           style={{
-            height: 120,
+            height: 'auto',
           }}
         >
           <ProductInfo />

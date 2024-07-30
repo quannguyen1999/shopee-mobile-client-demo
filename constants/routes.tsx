@@ -30,15 +30,15 @@ export const ROUTES_ROOT: IRouteProps[] = [
     },
     pageReset: "HomePage",
   },
-  {
-    name: "mall/MallLayout",
-    component: MallLayout,
-    title: "Mall",
-    icon: (color: string, focused: boolean) => {
-      return <MaterialIcons name="local-mall" size={size} color={color} />;
-    },
-    pageReset: "MallPage",
-  },
+  // {
+  //   name: "mall/MallLayout",
+  //   component: MallLayout,
+  //   title: "Mall",
+  //   icon: (color: string, focused: boolean) => {
+  //     return <MaterialIcons name="local-mall" size={size} color={color} />;
+  //   },
+  //   pageReset: "MallPage",
+  // },
   {
     name: "live/LiveLayout",
     component: LiveLayout,
