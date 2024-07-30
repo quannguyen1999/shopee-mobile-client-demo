@@ -4,7 +4,7 @@ interface CarouselItemProps {
   item: any;
 }
 
-const CarouselItem = ({ item }: CarouselItemProps) => {
+const CarouselItem = ({ item}: CarouselItemProps) => {
   const { width } = useWindowDimensions();
   return (
     <View style={[styles.container, { width }]}>

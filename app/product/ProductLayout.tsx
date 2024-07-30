@@ -1,25 +1,22 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { Text, View } from "react-native";
-
-import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import ProductPage from "./ProductPage";
+import { ROUTES_PRODUCT } from "@/constants/routes";
+import ProductHeader from "@/components/header/product/ProductHeader";
 
 const Stack = createNativeStackNavigator();
 
 export default function ProductLayout() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="ProductPage"
-        component={ProductPage}
-        options={{
-          headerTitle: (props: any) => <MenuHeader />,
+      {ROUTES_PRODUCT.map((r: any, i) => (
+        <Stack.Screen  key={i} name={r.name} component={r.component}  options={{
+          headerTitle: (props: any) => <ProductHeader />,
           headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
+            backgroundColor: "transparent",
           },
-        }}
-      />
+          headerShown: true,
+          headerTransparent: true
+        }}/>
+      ))}
     </Stack.Navigator>
   );
 }

@@ -14,14 +14,14 @@ import {
 } from "react-native";
 import { useRef, useState } from "react";
 import ProductItem from "./ProductItem";
-import { useNavigation } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 
 interface ProductListProps {}
 
-const ProductList = () => {
-  const navigation = useNavigation();
+const ProductList = (props: any) => {
+  const { navigation } = props.props;
   const navigatteToDetailPage = (id: number) => {
-    // navigation.navigate("");
+    navigation.navigate("ProductLayout");
   };
 
   return (

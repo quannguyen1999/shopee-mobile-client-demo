@@ -3,8 +3,9 @@ import { FlatList, View, StyleSheet, Animated } from "react-native";
 import CarouselItem from "./CarouselItem";
 import { useRef, useState } from "react";
 import Paginator from "./Paginator";
+import { Image } from "expo-image";
 
-const Carousel = () => {
+const CarouselProduct = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef(null);
@@ -14,7 +15,7 @@ const Carousel = () => {
       <FlatList
         data={IMAGES_CAROUSEL}
         renderItem={(item) => {
-          return <CarouselItem item={item.item} />;
+          return <CarouselItem item={item.item}/>;
         }}
         horizontal
         showsVerticalScrollIndicator
@@ -31,17 +32,32 @@ const Carousel = () => {
         viewabilityConfig={viewConfig}
         ref={slideRef}
       />
-
-      <Paginator data={IMAGES_CAROUSEL} scrollX={scrollX}/>
+       <View style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: 40,
+          width: '60%'
+        }}>
+          <Image
+            style={{
+              height: '100%',
+              width: "100%",
+            }}
+            source={require("../../assets/images/sale/sale3.png")}
+            contentFit="fill"
+            transition={1000}
+          />
+        </View>
     </View>
   );
 };
 
-export default Carousel;
+export default CarouselProduct;
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
+    height: '100%',
     width: "100%",
     // backgroundColor: "red",
   },
