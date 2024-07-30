@@ -22,7 +22,7 @@ import {
 const HomePage: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView} bounces={false}>
+      <ScrollView bounces={false}>
         <CarouselDashboard />
         <ScanBar />
         <CategoryBody />
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: StatusBar.currentHeight,
   },
-  scrollView: {},
   text: {
     fontSize: 42,
   },

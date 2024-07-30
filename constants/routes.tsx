@@ -85,20 +85,4 @@ export const ROUTES_ROOT: IRouteProps[] = [
   },
 ];
 
-export const ROUTES_HOME: IRouteProps[] = [
-  {
-    name: "HomePage",
-    component: HomePage,
-  },
-  {
-    name: "ProductLayout",
-    component: ProductLayout,
-  },
-];
 
-export const ROUTES_PRODUCT: IRouteProps[] = [
-  {
-    name: "ProductPage",
-    component: ProductPage,
-  },
-];

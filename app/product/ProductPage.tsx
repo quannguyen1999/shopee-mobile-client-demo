@@ -4,13 +4,16 @@ import {
   Text,
   View,
   StyleSheet,
-  Pressable,
-  StatusBar,
   SafeAreaView,
+  ScrollView,
+  StatusBar,
 } from "react-native";
+
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { IStackScreenProps } from "@/modal/StackScreenProps";
 import CarouselProduct from "@/components/carousel/CarouselProduct";
+import ProductInfo from "@/components/product/ProductInfo";
+import ProductList from "@/components/product/ProductList";
 const ProductPage: React.FunctionComponent<IStackScreenProps> = (
   props?: any
 ) => {
@@ -18,19 +21,33 @@ const ProductPage: React.FunctionComponent<IStackScreenProps> = (
     props.navigation.goBack();
   };
   return (
+    <ScrollView bounces={false}>
     <View style={styles.container}>
       <View>
+        <View style={styles.carousel}>
+          <CarouselProduct />
+        </View>
         <View
           style={{
-            height: 400,
+            height: 120,
           }}
         >
-         <CarouselProduct />
+          <ProductInfo />
         </View>
-
-        <Text>hehe</Text>
+        <View style={{
+          padding: 5,
+        }}>
+            <Text style={{
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: 'gray'
+            }}>Sản phẩm liên quan</Text>
+        </View>
+        <ProductList props={props}/>
+       
       </View>
     </View>
+    </ScrollView>
   );
 };
 
@@ -39,8 +56,10 @@ export default ProductPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: 10,
     paddingTop: StatusBar.currentHeight!,
+  },
+  carousel: {
+    height: 400,
   },
   image: {
     flex: 1,
