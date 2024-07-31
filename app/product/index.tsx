@@ -1,12 +1,14 @@
-import { Text, View, StyleSheet, ScrollView, StatusBar } from "react-native";
+import { Text, View, StyleSheet, ScrollView, StatusBar, SafeAreaView } from "react-native";
 
 import { IStackScreenProps } from "@/modal/StackScreenProps";
 import CarouselProduct from "@/components/carousel/CarouselProduct";
 import ProductInfo from "@/components/product/detail/ProductInfo";
 import ProductList from "@/components/product/ProductList";
+import ProductButton from "@/components/product/detail/ProductButton";
 
 const Product: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
   return (
+    <>
     <ScrollView bounces={false}>
       <View style={styles.container}>
         <View>
@@ -27,6 +29,19 @@ const Product: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
         </View>
       </View>
     </ScrollView>
+    <View style={{
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      width: '100%',
+      height: 70,
+      backgroundColor: 'white'
+    }}>
+       <ProductButton />
+    </View>
+   
+    </>
+    
   );
 };
 

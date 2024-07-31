@@ -16,9 +16,6 @@ const ProductInfo = () => {
       <View style={styleInfo.childContainer}>
         <ProductDate />
       </View>
-      <View style={styleInfo.childContainer}>
-        <ProductButton />
-      </View>
     </View>
   );
 };

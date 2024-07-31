@@ -15,8 +15,6 @@ export default function ProductDetail() {
         name="modal"
         options={{
           presentation: "modal",
-
-        //   headerShown: false,
           headerStyle: {
             backgroundColor: "oranges",
           },
