@@ -29,7 +29,7 @@ export default function HomeLayout() {
             headerStyle: {
               backgroundColor: "rgb(249 115 22)",
             }, 
-            headerShown: r.name == "HomePage" && true,
+            headerShown: true,
           }}
         />
       ))}

@@ -7,8 +7,10 @@ export default function ProductDetail() {
       <Stack.Screen
         name="index"
         options={{
+          headerTitle: (props: any) => <ProductHeader />,
           // Hide the header for all other routes.
-          headerShown: false,
+          headerShown: true,
+          headerTransparent: true
         }}
       />
       <Stack.Screen

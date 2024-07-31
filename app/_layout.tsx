@@ -52,11 +52,16 @@ const RootLayout = () => {
               tabBarIcon: ({ color, focused }) => r.icon(color, focused),
 
               headerShown: false,
-              headerTransparent: true,
+              // headerTransparent: true,
+              
               tabBarBadge: tabBarBadge,
               tabBarActiveTintColor: activeColor,
               tabBarInactiveTintColor: inActiveColor,
               tabBarBadgeStyle: styles.tabBarBadgeStyle,
+              // headerTitle: (props: any) => <MenuHeader />,
+              headerStyle: {
+                backgroundColor: BG_ORANGE_600
+              }
               // tabBarStyle: {
               //   display: /product/i.test(navigationCustom) ? "none" : "flex",
               // },
@@ -101,7 +106,7 @@ const RootLayout = () => {
         <Tabs.Screen
           name="product"
           options={{
-            // headerShown: false,
+            headerShown: false,
             // headerTitle: (props: any) => <ProductHeader />,
             headerTransparent: true,
             tabBarStyle: {

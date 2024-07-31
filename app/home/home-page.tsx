@@ -21,7 +21,7 @@ import {
 
 const HomePage: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
   return (
-    // <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView bounces={false}>
         <CarouselDashboard />
         <ScanBar />
@@ -35,7 +35,7 @@ const HomePage: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
         <TitleCategory text="Gợi Ý Hôm Nay" />
         <ProductList props={props}/>
       </ScrollView>
-    // </SafeAreaView>
+     </SafeAreaView>
   );
 };
 
@@ -44,7 +44,7 @@ export default HomePage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
+    marginTop: StatusBar.currentHeight,
   },
   text: {
     fontSize: 42,
