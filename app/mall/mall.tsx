@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-const MallPage = () => {
+const Mall = () => {
   return (
     <View>
       <Text>Mall page</Text>
@@ -8,4 +8,4 @@ const MallPage = () => {
   );
 };
 
-export default MallPage;
+export default Mall;

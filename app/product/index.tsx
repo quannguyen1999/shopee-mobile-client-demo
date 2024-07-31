@@ -1,23 +1,11 @@
-import HomeImageSale from "@/components/HomeImageSale";
-import { Image } from "expo-image";
-import {
-  Text,
-  View,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-} from "react-native";
+import { Text, View, StyleSheet, ScrollView, StatusBar } from "react-native";
 
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { IStackScreenProps } from "@/modal/StackScreenProps";
 import CarouselProduct from "@/components/carousel/CarouselProduct";
 import ProductInfo from "@/components/product/detail/ProductInfo";
 import ProductList from "@/components/product/ProductList";
 
-const ProductDetailPage: React.FunctionComponent<IStackScreenProps> = (
-  props?: any
-) => {
+const Product: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
   return (
     <ScrollView bounces={false}>
       <View style={styles.container}>
@@ -25,11 +13,7 @@ const ProductDetailPage: React.FunctionComponent<IStackScreenProps> = (
           <View style={styles.carousel}>
             <CarouselProduct />
           </View>
-          <View
-            style={{
-              height: "auto",
-            }}
-          >
+          <View style={styles.productInfo}>
             <ProductInfo />
           </View>
           <View
@@ -37,15 +21,7 @@ const ProductDetailPage: React.FunctionComponent<IStackScreenProps> = (
               padding: 5,
             }}
           >
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: "bold",
-                color: "gray",
-              }}
-            >
-              Sản phẩm liên quan
-            </Text>
+            <Text style={styles.titleCategory}>Sản phẩm liên quan</Text>
           </View>
           <ProductList props={props} />
         </View>
@@ -54,7 +30,7 @@ const ProductDetailPage: React.FunctionComponent<IStackScreenProps> = (
   );
 };
 
-export default ProductDetailPage;
+export default Product;
 
 const styles = StyleSheet.create({
   container: {
@@ -68,5 +44,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     height: 50,
+  },
+  productInfo: {
+    height: "auto",
+  },
+  titleCategory: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "gray",
   },
 });

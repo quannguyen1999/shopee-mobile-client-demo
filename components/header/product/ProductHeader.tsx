@@ -4,6 +4,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { useNavigation, useRouter } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import {  Dimensions } from 'react-native';
 const ProductHeader = () => {
   const navigate = useNavigation();
   const goBackHomePage = () => {
@@ -12,13 +13,14 @@ const ProductHeader = () => {
   return (
     <View style={styles.container}>
       <View>
-        <Pressable android_ripple={{ color: "black" }} onPress={goBackHomePage}>
+        <Pressable android_ripple={{ color: "white" }} onPress={goBackHomePage}>
           <View style={styles.containerLeft}>
             <AntDesign
               name="arrowleft"
               size={24}
               color="white"
             />
+          
           </View>
         </Pressable>
       </View>
@@ -46,11 +48,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
+    // backgroundColor: 'red',
+    width: Dimensions.get('window').width,
   },
   containerLeft: {
     width: 40,
     height: 32,
-    flex: 1,
     borderRadius: 9999,
     justifyContent: "center",
     alignItems: "center",

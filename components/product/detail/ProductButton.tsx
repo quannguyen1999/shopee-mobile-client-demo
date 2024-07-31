@@ -2,12 +2,19 @@ import { View, StyleSheet, Text } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { BG_RED_500 } from "@/constants/colors";
+import { Link } from "expo-router";
 
 const ProductButton = () => {
   const size = 25;
+
   return (
     <View style={styles.container}>
-      <View style={[styles.iconContainer, {borderRightWidth: 1, borderColor: 'gray'}]}>
+      <View
+        style={[
+          styles.iconContainer,
+          { borderRightWidth: 1, borderColor: "gray" },
+        ]}
+      >
         <Ionicons
           style={styles.icon}
           name="logo-wechat"
@@ -23,10 +30,9 @@ const ProductButton = () => {
           color={BG_RED_500}
         />
       </View>
-
-      <View style={styles.childContainer}>
-        <Text style={{color: 'white'}}>Mua Ngay</Text>
-      </View>
+      <Link href="/product/modal" style={styles.childContainer}>
+        Mua Ngay      
+      </Link>
     </View>
   );
 };
@@ -41,19 +47,20 @@ const styles = StyleSheet.create({
     width: "20%",
     padding: 5,
     // flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  icon: {
- 
- 
-  },
+  icon: {},
   childContainer: {
-    width: "80%",
+    width: "100%",
     flex: 1,
+    margin: 'auto',
+    padding: 10,
+    color: 'white',
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: BG_RED_500
+    textAlign: 'center',
+    backgroundColor: BG_RED_500,
   },
 });

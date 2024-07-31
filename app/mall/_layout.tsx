@@ -1,19 +1,17 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Text, View } from "react-native";
 
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import InfoPage from "./InfoPage";
-
+import Mall from "./mall";
 
 const Stack = createNativeStackNavigator();
 
-export default function InfoLayout() {
+export default function MallLayout() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="InfoPage"
-        component={InfoPage}
+        name="Mall"
+        component={Mall}
         options={{
           headerTitle: (props: any) => <MenuHeader />,
           headerStyle: {
@@ -21,7 +19,6 @@ export default function InfoLayout() {
           },
         }}
       />
-      
     </Stack.Navigator>
   );
 }

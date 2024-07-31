@@ -1,9 +1,9 @@
 import { Text, View } from "react-native"
 
-const LivePage = () => {
+const Live = () => {
     return <View>
         <Text>Live page</Text>
     </View>
 }
 
-export default LivePage;
+export default Live;

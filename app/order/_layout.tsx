@@ -3,16 +3,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text, View } from "react-native";
 
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import NotificationPage from "./NotificationPage";
+import Info from "./order";
+import Order from "./order";
 
 const Stack = createNativeStackNavigator();
 
-export default function NotificationLayout() {
+export default function layout() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="NotificationPage"
-        component={NotificationPage}
+        name="order"
+        component={Order}
         options={{
           headerTitle: (props: any) => <MenuHeader />,
           headerStyle: {
@@ -20,6 +21,7 @@ export default function NotificationLayout() {
           },
         }}
       />
+      
     </Stack.Navigator>
   );
 }

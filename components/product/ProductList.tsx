@@ -15,13 +15,14 @@ import {
 import { useRef, useState } from "react";
 import ProductItem from "./ProductItem";
 import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 
 interface ProductListProps {}
 
 const ProductList = (props: any) => {
-  const { navigation } = props.props;
+  const  router  = useRouter();
   const navigatteToDetailPage = (id: number) => {
-    navigation.navigate("ProductDetailLayout");
+    router.push('product');
   };
 
   return (

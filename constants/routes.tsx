@@ -1,26 +1,33 @@
-import HomePage from "@/app/home/HomePage";
-import ProductLayout from "@/app/product/ProductLayout";
 import IRouteProps from "@/modal/IRouteProps";
 import Feather from "@expo/vector-icons/Feather";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import HomeLayout from "@/app/home/HomeLayout";
-import MallLayout from "@/app/mall/MallLayout";
-import LiveLayout from "@/app/live/LiveLayout";
-import VideoLayout from "@/app/video/VideoLayout";
-import NotificationLayout from "@/app/notification/NotificationLayout";
-import InfoLayout from "@/app/info/InfoLayout";
-import ProductPage from "@/app/product/ProductPage";
+import Mall from "@/app/mall/mall";
+import {
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
+import Live from "@/app/live/live";
+import Notification from "@/app/notification/notification";
+import Info from "@/app/info/info";
 
 const size = 28;
+export const ROUTES_ROUTE_HIDE : IRouteProps[] = [
+  {
+    name: "conversation",
+  },
+  {
+    name: "order"
+  },
+
+]
+
+
 
 export const ROUTES_ROOT: IRouteProps[] = [
   {
-    name: "home/HomeLayout",
-    component: HomeLayout,
-    title: "Home",
+    name: "home",
+    title: "home",
     icon: (color: string, focused: boolean) => {
       return focused ? (
         <AntDesign name="like2" size={size} color={color} />
@@ -28,50 +35,33 @@ export const ROUTES_ROOT: IRouteProps[] = [
         <Feather name="home" size={size} color={color} />
       );
     },
-    pageReset: "HomePage",
   },
-  // {
-  //   name: "mall/MallLayout",
-  //   component: MallLayout,
-  //   title: "Mall",
-  //   icon: (color: string, focused: boolean) => {
-  //     return <MaterialIcons name="local-mall" size={size} color={color} />;
-  //   },
-  //   pageReset: "MallPage",
-  // },
   {
-    name: "live/LiveLayout",
-    component: LiveLayout,
-    title: "Live",
+    name: "mall",
+    title: "mall",
+    icon: (color: string, focused: boolean) => {
+      return <MaterialIcons name="local-mall" size={size} color={color} />;
+    },
+  },
+  {
+    name: "live",
+    title: "live",
     icon: (color: string, focused: boolean) => {
       return <MaterialIcons name="live-tv" size={size} color={color} />;
     },
-    pageReset: "LivePage",
   },
   {
-    name: "video/VideoLayout",
-    component: VideoLayout,
-    title: "Video",
-    icon: (color: string, focused: boolean) => {
-      return <AntDesign name="videocamera" size={size} color={color} />;
-    },
-    pageReset: "VideoPage",
-  },
-  {
-    name: "notification/NotificationLayout",
-    component: NotificationLayout,
-    title: "Notification",
+    name: "notification",
+    title: "notification",
     icon: (color: string, focused: boolean) => {
       return (
         <Ionicons name="notifications-outline" size={size} color={color} />
       );
     },
-    pageReset: "NotificationPage",
   },
   {
-    name: "info/InfoLayout",
-    component: InfoLayout,
-    title: "Info",
+    name: "info",
+    title: "info",
     icon: (color: string, focused: boolean) => {
       return (
         <MaterialCommunityIcons
@@ -81,7 +71,6 @@ export const ROUTES_ROOT: IRouteProps[] = [
         />
       );
     },
-    pageReset: "InfoPage",
   },
 ];
 

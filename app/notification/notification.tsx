@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-const NotificationPage = () => {
+const Notification = () => {
   return (
     <View>
       <Text>Notificaiton page</Text>
@@ -8,4 +8,4 @@ const NotificationPage = () => {
   );
 };
 
-export default NotificationPage;
+export default Notification;
