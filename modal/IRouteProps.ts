@@ -6,4 +6,5 @@ export default interface IRouteProps {
     name: string;
     title?: string;
     icon?: ( color: string ,focused: boolean) => React.ReactNode;
+    isTransparent?: boolean;
 }

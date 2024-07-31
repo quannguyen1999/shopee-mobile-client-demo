@@ -2,17 +2,13 @@ import HomeImageSale from "@/components/HomeImageSale";
 import TitleCategory from "@/components/TitleCategory";
 import ScanBar from "@/components/bar/ScanBar";
 import CarouselDashboard from "@/components/carousel/CarouselDashboard";
-
 import CategoryBody from "@/components/category/CategoryBody";
 import FlashBody from "@/components/flash/FlashBody";
 import LiveBody from "@/components/live/LiveBody";
 import ProductList from "@/components/product/ProductList";
 import { IStackScreenProps } from "@/modal/StackScreenProps";
-import { Image } from "expo-image";
 
 import {
-  Text,
-  View,
   StyleSheet,
   SafeAreaView,
   ScrollView,

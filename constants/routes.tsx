@@ -1,7 +1,6 @@
 import IRouteProps from "@/modal/IRouteProps";
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Mall from "@/app/mall/mall";
 import {
   Ionicons,
   MaterialCommunityIcons,
@@ -36,20 +35,14 @@ export const ROUTES_ROOT: IRouteProps[] = [
       );
     },
   },
-  {
-    name: "mall",
-    title: "mall",
-    icon: (color: string, focused: boolean) => {
-      return <MaterialIcons name="local-mall" size={size} color={color} />;
-    },
-  },
-  {
-    name: "live",
-    title: "live",
-    icon: (color: string, focused: boolean) => {
-      return <MaterialIcons name="live-tv" size={size} color={color} />;
-    },
-  },
+  // {
+  //   name: "live",
+  //   title: "live",
+  //   icon: (color: string, focused: boolean) => {
+  //     return <MaterialIcons name="live-tv" size={size} color={color} />;
+  //   },
+  //   isTransparent: true
+  // },
   {
     name: "notification",
     title: "notification",

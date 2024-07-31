@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import Live from "./live";
+import VideoHeader from "@/components/header/VideoHeader";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,10 +15,8 @@ export default function LiveLayout() {
         name="Live"
         component={Live}
         options={{
-          headerTitle: (props: any) => <MenuHeader />,
-          headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
-          },
+          headerTransparent: true,
+          headerTitle: (props: any) => <VideoHeader />,
         }}
       />
       

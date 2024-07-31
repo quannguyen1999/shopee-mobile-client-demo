@@ -20,7 +20,6 @@ const LiveBody = () => {
         showsVerticalScrollIndicator
         pagingEnabled
         bounces={false}
-        // keyExtractor={(item) => item.data}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           {
@@ -28,9 +27,6 @@ const LiveBody = () => {
           }
         )}
         scrollEventThrottle={32}
-        // onViewableItemsChanged={(val) => {
-        //   setCurrentIndex(val.viewableItems[0].index!);
-        // }}
         viewabilityConfig={viewConfig}
         ref={slideRef}
       />

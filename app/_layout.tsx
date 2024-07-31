@@ -9,6 +9,7 @@ import { Tabs, useNavigation, usePathname, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import ProductHeader from "@/components/header/product/ProductHeader";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const MainLayout = () => {
   return (
@@ -34,7 +35,6 @@ const RootLayout = () => {
 
   useEffect(() => {
     dispatch(updateCurrentUrl(pathName));
-    // setIsTabBarVisible(isShowMenu(navigationCustom))
   }, [pathName]);
 
   return (
@@ -48,43 +48,36 @@ const RootLayout = () => {
             name={r.name}
             options={{
               title: r.title,
-
               tabBarIcon: ({ color, focused }) => r.icon(color, focused),
-
               headerShown: false,
-              // headerTransparent: true,
-              
               tabBarBadge: tabBarBadge,
               tabBarActiveTintColor: activeColor,
               tabBarInactiveTintColor: inActiveColor,
               tabBarBadgeStyle: styles.tabBarBadgeStyle,
-              // headerTitle: (props: any) => <MenuHeader />,
-              headerStyle: {
-                backgroundColor: BG_ORANGE_600
-              }
-              // tabBarStyle: {
-              //   display: /product/i.test(navigationCustom) ? "none" : "flex",
-              // },
-              // href: null,
-
-              // headerLeft: () => {
-              //   console.log(navigation.route.name);
-              //   // <DrawerButton onPress={() => navigation.toggleDrawer()} />
-              //   return <View></View>;
-              // },
             }}
-
-            // listeners={({ navigation }) => ({
-            //   tabPress: (e) => {
-            //     console.log(navigation)
-            //     navigation.reset({
-            //       index: 0,
-            //       routes: [{ name: r.pageReset }],
-            //     });
-            //   },
-            // })}
           />
         ))}
+
+        <Tabs.Screen
+          name="live"
+          options={{
+            title: "live",
+            tabBarIcon: ({ color, focused }) => (
+              <MaterialIcons name="live-tv" size={25} color={color} />
+            ),
+            headerShown: false,
+            tabBarBadge: tabBarBadge,
+            tabBarActiveTintColor: activeColor,
+            tabBarInactiveTintColor: "white",
+            tabBarBadgeStyle: styles.tabBarBadgeStyle,
+            tabBarStyle: {
+              backgroundColor: "transparent",
+              borderTopWidth: 0,
+              position: "absolute",
+              zIndex: 10,
+            },
+          }}
+        />
 
         {ROUTES_ROUTE_HIDE.map((r: any, i) => (
           <Tabs.Screen
@@ -101,7 +94,6 @@ const RootLayout = () => {
             }}
           />
         ))}
-
 
         <Tabs.Screen
           name="product"
