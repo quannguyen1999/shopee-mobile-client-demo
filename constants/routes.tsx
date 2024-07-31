@@ -6,9 +6,6 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
 } from "@expo/vector-icons";
-import Live from "@/app/live/live";
-import Notification from "@/app/notification/notification";
-import Info from "@/app/info/info";
 
 const size = 28;
 export const ROUTES_ROUTE_HIDE : IRouteProps[] = [

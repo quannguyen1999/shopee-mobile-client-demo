@@ -5,7 +5,7 @@ import { BG_GRAY_400 } from "@/constants/colors";
 
 const LiveInput = () => {
   const sizeIcon = 25;
-  const colorIcon = BG_GRAY_400;
+  const colorIcon = 'white';
   return (
     <>
       <View style={styles.icon}>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     zIndex: 14,
     // backgroundColor: "red",
     flexDirection: "row",
-    gap: 20,
+    gap: 2,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 9999,
     borderColor: "white",
     backgroundColor: BG_GRAY_400,
-    opacity: 0.5,
+    opacity: 0.6,
     color: "white",
     fontSize: 16,
   },
