@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import { StyleSheet, Text, TextInput, View, Pressable, SafeAreaView } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
@@ -12,7 +12,7 @@ const VideoHeader = () => {
     navigate.goBack();
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.containerChildOne}>
         <Pressable android_ripple={{ color: "white" }} onPress={goBackHomePage}>
           <View >
@@ -28,7 +28,7 @@ const VideoHeader = () => {
       <View  style={styles.containerChildTwo}>
         <Text style={styles.text}>Dành cho bạn</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

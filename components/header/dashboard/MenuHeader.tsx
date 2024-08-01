@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 
 const MenuHeader = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer} >
         <EvilIcons name="search" size={24} color="black" />
         <TextInput style={styles.input} placeholder="Đồ ngủ cho chó" placeholderTextColor="red"/>
@@ -30,7 +30,7 @@ const MenuHeader = () => {
         />
         <Text style={styles.iconNumberOfItem}>99+</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

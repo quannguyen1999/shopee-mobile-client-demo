@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import { StyleSheet, Text, TextInput, View, Pressable, SafeAreaView } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
@@ -27,7 +27,7 @@ const ProductHeader = ({ scroll }: ProductHeaderProps) => {
   }, [scroll]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.containerLeft}>
         <Pressable android_ripple={{ color: "white" }} onPress={goBackHomePage}>
           <Animated.View
@@ -94,7 +94,7 @@ const ProductHeader = ({ scroll }: ProductHeaderProps) => {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    // backgroundColor: 'orange',
     width: Dimensions.get("window").width,
   },
   containerLeft: {

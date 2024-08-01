@@ -20,9 +20,9 @@ import { useRouter } from "expo-router";
 interface ProductListProps {}
 
 const ProductList = (props: any) => {
-  const  router  = useRouter();
+  const router = useRouter();
   const navigatteToDetailPage = (id: number) => {
-    router.push('product');
+    router.push("product");
   };
 
   return (
@@ -35,7 +35,9 @@ const ProductList = (props: any) => {
             android_ripple={{ color: "black" }}
             onPress={() => navigatteToDetailPage(index)}
           >
-            <ProductItem item={item} />
+            {/* <View style={{ width: "50%" }}> */}
+              <ProductItem item={item} />
+            {/* </View> */}
           </Pressable>
         );
       })}
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
+    
   },
   pressedItem: {
     opacity: 0.5,

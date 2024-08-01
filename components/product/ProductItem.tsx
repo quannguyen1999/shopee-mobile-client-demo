@@ -12,7 +12,7 @@ const ProductItem = ({ item }: ProductItemProps) => {
         <Image
           style={[
             {
-              width: 170,
+              width: '100%',
               height: 170,
               justifyContent: "center",
             },
@@ -69,13 +69,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 8,
     gap: 2,
+    // backgroundColor: 'red'
   },
   title: {
     justifyContent: "center",
     alignItems: "center",
   },
   containerStar: {
-    width: 35,
+    width: '30%',
     borderWidth: 1,
     borderColor: "rgb(245 158 11)",
     flexDirection: "row",
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   containerPriceLeft: {
-    width: "30%",
+    width: "48%",
     color: BG_ORANGE_600,
     fontWeight: "bold",
   },

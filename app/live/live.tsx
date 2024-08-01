@@ -49,7 +49,6 @@ export default Live;
 const styles = StyleSheet.create({
   container: {
     height: "100%",
-    width: 500,
     flex: 1,
     // backgroundColor: BG_ORANGE_200
   },
