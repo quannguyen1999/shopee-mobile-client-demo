@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { AntDesign, Entypo, FontAwesome } from "@expo/vector-icons";
-import { SafeAreaView, ScrollView, StatusBar, TextInput } from "react-native";
+import { TextInput } from "react-native";
 import { BG_GRAY_400 } from "@/constants/colors";
-
+import Disc from "../animate/Disc";
+import Heart from "../animate/Heart";
 const LiveInput = () => {
   const sizeIcon = 25;
-  const colorIcon = 'white';
+  const colorIcon = "white";
   return (
     <>
       <View style={styles.icon}>
@@ -30,8 +31,9 @@ const LiveInput = () => {
         <FontAwesome name="share" size={sizeIcon} color={colorIcon} />
       </View>
       <View style={styles.icon}>
-        <AntDesign name="heart" size={sizeIcon} color={colorIcon} />
+        <Heart sizeIcon={sizeIcon} colorIcon={colorIcon}/>
       </View>
+      <Disc />
     </>
   );
 };
@@ -57,15 +59,13 @@ const styles = StyleSheet.create({
     height: 50,
     flex: 1,
     zIndex: 14,
-    // backgroundColor: "red",
     flexDirection: "row",
-    gap: 2,
     justifyContent: "center",
     alignItems: "center",
   },
   inputContainer: {
-    width: "45%",
-    // flex: 3,
+    width: "35%",
+
     justifyContent: "center",
     alignItems: "center",
   },
@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   icon: {
-    // flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
