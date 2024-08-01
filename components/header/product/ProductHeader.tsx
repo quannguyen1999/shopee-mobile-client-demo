@@ -9,9 +9,9 @@ import { useRef, useEffect, useState } from "react";
 import { Animated } from "react-native";
 import { BG_ORANGE_200, BG_ORANGE_600 } from "@/constants/colors";
 interface ProductHeaderProps {
-  scroll: number;
+  scroll?: number;
 }
-const ProductHeader = ({ scroll }: ProductHeaderProps) => {
+const ProductHeader = ({ scroll = 0 }: ProductHeaderProps) => {
   // const [color, setColor] = useState();
   const animatedValue = useRef(new Animated.Value(1)).current;
 

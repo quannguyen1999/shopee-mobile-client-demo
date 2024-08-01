@@ -19,9 +19,6 @@ interface LivePlayerProps {
 }
 export const LivePlayer = ({ uri, isActive}: LivePlayerProps) => {
   const video = React.useRef(null);
-//   useEffect(()=>{
-//     console.log(isActive)
-//   }, [isActive])
   return (
     <View style={styles.container}>
       <Video
@@ -38,7 +35,7 @@ export const LivePlayer = ({ uri, isActive}: LivePlayerProps) => {
       <View style={styles.childContainer}>
         <LiveNotification />
         <View style={styles.subChildContainer}>
-          <LiveInput />
+          <LiveInput isActive={isActive}/>
         </View>
       </View>
     </View>

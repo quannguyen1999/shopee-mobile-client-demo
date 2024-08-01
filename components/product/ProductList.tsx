@@ -31,7 +31,7 @@ const ProductList = (props: any) => {
         return (
           <Pressable
             key={index}
-            style={({ pressed }) => pressed && styles.pressedItem}
+            style={({ pressed }) =>  [pressed && styles.pressedItem, {width: '50%'}]}
             android_ripple={{ color: "black" }}
             onPress={() => navigatteToDetailPage(index)}
           >

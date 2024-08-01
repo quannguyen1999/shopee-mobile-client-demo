@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import Notification from "./notification";
+import NotificationHeader from "@/components/header/NotificationHeader";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,10 +15,7 @@ export default function NotificationLayout() {
         name="Notification"
         component={Notification}
         options={{
-          headerTitle: (props: any) => <MenuHeader />,
-          headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
-          },
+          headerTitle: (props: any) => <NotificationHeader />,
         }}
       />
     </Stack.Navigator>

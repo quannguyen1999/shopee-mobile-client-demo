@@ -1,3 +1,7 @@
+export const BG_SLATE_200 = "rgb(226 232 240)";
+export const BG_SLATE_500 = "rgb(100 116 139)";
+
+
 export const BG_ORANGE_200 = "rgb(254 215 170)";
 export const BG_ORANGE_500 = "rgb(249 115 22)";
 export const BG_ORANGE_600 = "rgb(234 88 12)";

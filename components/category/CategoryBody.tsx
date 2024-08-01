@@ -19,11 +19,9 @@ const Carousel = () => {
           return <CategoryItem item={item.item.data} />;
         }}
         horizontal
-        
         showsVerticalScrollIndicator
         pagingEnabled
         bounces={false}
-        // keyExtractor={(item) => item.data}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           {
@@ -41,7 +39,7 @@ const Carousel = () => {
       <Paginator
         data={CATEGORY_ITEMS}
         scrollX={scrollX}
-        // backgroundColor="red"
+        backgroundColor="red"
         bottom={-20}
         left={42}
       />
@@ -53,10 +51,9 @@ export default Carousel;
 
 const styles = StyleSheet.create({
   container: {
-    height: 160,
+    height: "8%",
     width: "100%",
     justifyContent: "center",
-    alignItems: "center",
-    padding:1,
+    alignItems: "center", 
   },
 });

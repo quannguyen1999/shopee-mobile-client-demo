@@ -9,44 +9,26 @@ const CategoryItem = ({ item }: CategoryItemProps) => {
   return (
     <View style={[styles.container, { width }]}>
       {item.map((value: any, index: number) => (
-        <View key={index} style={styles.childContainer}>
-          <View
-            style={{
-              borderWidth: 2,
-              borderColor: "gray",
-              padding: 6,
-              borderRadius: 10,
-            }}
-          >
-            <Image
-              style={[
-                {
-                  width: 50,
-                  height: 30,
-                  justifyContent: "center",
-                },
-              ]}
-              source={value.icon}
-              transition={1000}
-            />
-          </View>
-          <View
-            style={{
-              justifyContent: "center",
-              width: '90%'
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "bold",
-                textAlignVertical: "center",
-                textAlign: "center",
-              }}
-            >
-              {value.title}
-            </Text>
-          </View>
+        <View
+          key={index}
+          style={{
+            width: "25%",
+            height: "50%",
+            padding: 5,
+          }}
+        >
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "60%",
+              },
+            ]}
+            contentFit="fill"
+            source={value.icon}
+            transition={1000}
+          />
+          <Text style={styles.text}>{value.title}</Text>
         </View>
       ))}
     </View>
@@ -57,17 +39,14 @@ export default CategoryItem;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    height: 290,
   },
-  childContainer: {
-    width: "25%",
-    height: "25%",
-    // justifyContent: "center",
-    alignItems: "center",
-    gap: 3,
-    flexDirection: "column",
+  text: {
+    fontSize: 11,
+    textAlignVertical: "center",
+    textAlign: "center",
+    paddingTop: 10
   },
 });

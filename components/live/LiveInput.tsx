@@ -4,7 +4,10 @@ import { TextInput } from "react-native";
 import { BG_GRAY_400 } from "@/constants/colors";
 import Disc from "../animate/Disc";
 import Heart from "../animate/Heart";
-const LiveInput = () => {
+interface LiveInputProps {
+  isActive: boolean;
+}
+const LiveInput = ({ isActive }: LiveInputProps) => {
   const sizeIcon = 25;
   const colorIcon = "white";
   return (
@@ -31,9 +34,9 @@ const LiveInput = () => {
         <FontAwesome name="share" size={sizeIcon} color={colorIcon} />
       </View>
       <View style={styles.icon}>
-        <Heart sizeIcon={sizeIcon} colorIcon={colorIcon}/>
+        <Heart isActive={isActive} sizeIcon={sizeIcon} colorIcon={colorIcon} />
       </View>
-      <Disc />
+      <Disc isActive={isActive}/>
     </>
   );
 };

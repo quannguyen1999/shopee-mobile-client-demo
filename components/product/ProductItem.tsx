@@ -89,12 +89,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   containerPriceLeft: {
-    width: "48%",
+    width: "50%",
     color: BG_ORANGE_600,
     fontWeight: "bold",
   },
   containerPriceRight: {
-    flex: 1,
+    width: "50%",
     alignItems: "flex-end",
     justifyContent: "flex-end",
   },

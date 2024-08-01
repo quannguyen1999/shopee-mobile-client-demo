@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, Animated, Easing } from "react-native";
 import { useRef, useEffect, useCallback } from "react";
-const Disc = () => {
+interface DiscProps {
+  isActive: boolean;
+}
+const Disc = ({ isActive }: DiscProps) => {
   const discAnimatedValue = useRef(new Animated.Value(0)).current;
   const musicNoteAnimatedValue1 = useRef(new Animated.Value(0)).current;
   const musicNoteAnimatedValue2 = useRef(new Animated.Value(0)).current;
@@ -60,8 +63,19 @@ const Disc = () => {
   }, [discAnimatedValue]);
 
   useEffect(() => {
-    triggerAnimation();
-  }, []);
+    if (isActive) {
+      triggerAnimation();
+    } else {
+      discAnimLoopRef.current?.stop();
+      musicAnimLoopRef1.current?.stop();
+      musicAnimLoopRef2.current?.stop();
+      musicAnimLoopRef3.current?.stop();
+      discAnimatedValue.setValue(0);
+      musicNoteAnimatedValue1.setValue(0);
+      musicNoteAnimatedValue2.setValue(0);
+      musicNoteAnimatedValue3.setValue(0);
+    }
+  }, [isActive, triggerAnimation, discAnimatedValue]);
 
   const discAnimation = {
     transform: [
@@ -128,12 +142,14 @@ const Disc = () => {
 
   return (
     <>
-      <View style={{
-        backgroundColor: 'transparent'
-      }}>
+      <View
+        style={{
+          backgroundColor: "transparent",
+        }}
+      >
         <Animated.Image
           source={require("../../assets/images/music/disc.png")}
-          style={[{ width: 30, height: 30, zIndex: 10,  }, discAnimation]}
+          style={[{ width: 30, height: 30, zIndex: 10 }, discAnimation]}
         />
       </View>
       <Animated.Image

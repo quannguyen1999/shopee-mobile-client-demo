@@ -22,6 +22,15 @@ export const ROUTES_ROUTE_HIDE : IRouteProps[] = [
 
 export const ROUTES_ROOT: IRouteProps[] = [
   {
+    name: "notification",
+    title: "notification",
+    icon: (color: string, focused: boolean) => {
+      return (
+        <Ionicons name="notifications-outline" size={size} color={color} />
+      );
+    },
+  },
+  {
     name: "home",
     title: "home",
     icon: (color: string, focused: boolean) => {
@@ -40,15 +49,7 @@ export const ROUTES_ROOT: IRouteProps[] = [
   //   },
   //   isTransparent: true
   // },
-  {
-    name: "notification",
-    title: "notification",
-    icon: (color: string, focused: boolean) => {
-      return (
-        <Ionicons name="notifications-outline" size={size} color={color} />
-      );
-    },
-  },
+
   {
     name: "info",
     title: "info",
