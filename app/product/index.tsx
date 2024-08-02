@@ -20,9 +20,9 @@ import { opacity } from "react-native-reanimated/lib/typescript/reanimated2/Colo
 const Product: React.FunctionComponent<IStackScreenProps> = (props?: any) => {
   const animatedValue = useRef(new Animated.Value(1)).current;
   const [scroll, setScroll] = useState(0);
-  useEffect(() => {
-    console.log(animatedValue);
-  }, [animatedValue]);
+  // useEffect(() => {
+  //   console.log(animatedValue);
+  // }, [animatedValue]);
   useEffect(() => {
     animatedValue.setValue(scroll);
   }, [scroll]);

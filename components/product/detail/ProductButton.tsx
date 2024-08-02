@@ -7,7 +7,7 @@ import { Link } from "expo-router";
 const ProductButton = () => {
   const size = 25;
   const navigateToOrderPage = () => {
-    console.log(" ok order");
+    // console.log(" ok order");
   };
   return (
     <View style={styles.container}>

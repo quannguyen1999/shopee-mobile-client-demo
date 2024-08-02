@@ -29,7 +29,7 @@ export const LivePlayer = ({ uri, isActive}: LivePlayerProps) => {
         style={styles.backgroundVideo}
         useNativeControls={false}
         isLooping
-        shouldPlay={false}
+        shouldPlay={true}
         resizeMode={ResizeMode.COVER}
       />
       <View style={styles.childContainer}>

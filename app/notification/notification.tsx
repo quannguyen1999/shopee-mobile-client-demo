@@ -1,3 +1,4 @@
+import AccordionCustom from "@/components/accordion/AccordionCustom";
 import NotificationHeader from "@/components/notification/NotificationHeader";
 import NotificationItem from "@/components/notification/NotificationItem";
 import { NOTIFICATION_BOTTOM, NOTIFICATION_TOP } from "@/constants/datas";
@@ -18,18 +19,8 @@ const Notification = () => {
       })}
       <NotificationHeader />
      
-      {NOTIFICATION_BOTTOM.map((value, index) => {
-        return (
-          <NotificationItem
-            isTransaction={value.isTransaction}
-            content={value.content}
-            iconLeft={value.iconLeft}
-            title={value.title}
-            key={index}
-            // time={toime}
-          />
-        );
-      })}
+     <AccordionCustom datas={NOTIFICATION_BOTTOM}/>
+      
      
     </ScrollView>
   );

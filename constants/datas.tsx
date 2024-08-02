@@ -1,9 +1,12 @@
-import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { Image } from "expo-image";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import { BG_GRAY_400 } from "./colors";
+import NotificationItem from "@/components/notification/NotificationItem";
+import Transaction from "@/components/notification/NotificationTransaction";
+import { Divider } from "@gluestack-ui/themed";
 export const CATEGORY_ITEMS = [
   {
     data: [
@@ -361,125 +364,314 @@ export const NOTIFICATION_TOP = [
   },
 ];
 
+
 export const NOTIFICATION_BOTTOM = [
   {
-    content: (
-      <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
-    ),
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/meo/meo1.png")}
-        contentFit="fill"
+    id: 1,
+    parent: (
+      <Transaction
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
+        status={1}
       />
     ),
-    title: "Khuyến Mãi",
-    isTransaction: true,
-    time: '11:30'
-  },
-  {
-    content: <Text>Save Cuối tháng - Săn bể lồn</Text>,
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/face/haha.png")}
-        contentFit="fill"
-      />
-    ),
-    title: "Live & Video",
-    isTransaction: true,
-  },
-  {
-    content: (
+    child: (
       <>
-        <FontAwesome5 name="accessible-icon" size={24} color="black" />
-        <Text>Vouncher 18+</Text>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
       </>
     ),
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/face/haha.png")}
-        contentFit="fill"
-      />
-    ),
-    title: "Thông tin tài chính",
-    isTransaction: true,
   },
   {
-    content: (
+    id: 2,
+    parent: (
+      <Transaction
+      status={2}
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
+      />
+    ),
+    child: (
       <>
-        <MaterialIcons name="local-activity" size={20} color="black" />
-        <Text>Gâu gâu</Text>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
       </>
     ),
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/face/haha.png")}
-        contentFit="fill"
-      />
-    ),
-    title: "Khuyến Mãi",
-    isTransaction: true,
   },
   {
-    content: <Text>Save Cuối tháng - Săn bể lồn</Text>,
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/face/haha.png")}
-        contentFit="fill"
+    id: 3,
+    parent: (
+      <Transaction
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
       />
     ),
-    title: "Live & Video",
-    isTransaction: true,
-  },
-  {
-    content: (
+    child: (
       <>
-        <FontAwesome5 name="accessible-icon" size={24} color="black" />
-        <Text>Vouncher 18+</Text>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
       </>
     ),
-    iconLeft: (
-      <Image
-        style={[
-          {
-            width: "100%",
-            height: "100%",
-          },
-        ]}
-        source={require("../assets/images/face/haha.png")}
-        contentFit="fill"
+  },
+  {
+    id: 4,
+    parent: (
+      <Transaction
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
       />
     ),
-    title: "Thông tin tài chính",
-    isTransaction: true,
+    child: (
+      <>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
+      </>
+    ),
+  },
+  {
+    id: 5,
+    parent: (
+      <Transaction
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
+      />
+    ),
+    child: (
+      <>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
+      </>
+    ),
+  },
+  {
+    id: 6,
+    parent: (
+      <Transaction
+        isTransaction={true}
+        content={
+          <Text style={{ color: "gray" }}>Đơn hàng 6969696 đã hoàn thành</Text>
+        }
+        iconLeft={
+          <Image
+            style={[
+              {
+                width: "100%",
+                height: "100%",
+              },
+            ]}
+            source={require("../assets/images/meo/meo6.png")}
+            contentFit="fill"
+          />
+        }
+        title={"Khuyến Mãi"}
+      />
+    ),
+    child: (
+      <>
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<Entypo name="check" size={24} color="green" />}
+          title={"Khuyến Mãi"}
+        />
+        <Divider />
+        <Transaction
+          isShowIcon={false}
+          isTransaction={true}
+          content={
+            <Text style={{ color: "gray" }}>
+              Đơn hàng 6969696 đã hoàn thành
+            </Text>
+          }
+          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          title={"Khuyến Mãi"}
+        />
+      </>
+    ),
   },
 ];

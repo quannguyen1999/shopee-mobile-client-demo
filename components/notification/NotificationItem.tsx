@@ -2,6 +2,7 @@ import { BG_GRAY_400, BG_ORANGE_600 } from "@/constants/colors";
 import { AntDesign, Entypo, MaterialIcons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { StyleSheet, View, Text } from "react-native";
+import Transaction from "./NotificationTransaction";
 interface NotificationItemProps {
   title: string;
   content: React.ReactNode;
@@ -16,7 +17,6 @@ const NotificationItem = ({
   isTransaction = false,
   status = 0,
 }: NotificationItemProps) => {
-  console.log(isTransaction);
   if (isTransaction) {
     return (
       <Transaction
@@ -88,40 +88,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Transaction = ({
-  iconLeft,
-  content,
-  title,
-  status,
-}: NotificationItemProps) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.iconContainerTransaction}>
-        <View
-          style={{
-            width: "70%",
-            height: "70%",
-          }}
-        >
-          {iconLeft}
-        </View>
-      </View>
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>
-          {status == 1
-            ? "Đơn hàng đã hoàn thành"
-            : status == 2
-            ? "Hoàn tiền thành công"
-            : "Thất bại"}
-        </Text>
-        <View style={styles.content}>{content}</View>
-      </View>
-      <View style={styles.iconRightContiner}>
-        <Entypo name="chevron-down" size={20} color={BG_GRAY_400} />
-      </View>
-    </View>
-  );
-};
+
 
 const NonTransaction = ({
   iconLeft,

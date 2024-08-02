@@ -8,28 +8,16 @@ import {
 } from "@expo/vector-icons";
 
 const size = 28;
-export const ROUTES_ROUTE_HIDE : IRouteProps[] = [
+export const ROUTES_ROUTE_HIDE: IRouteProps[] = [
   {
     name: "conversation",
   },
   {
-    name: "order"
+    name: "order",
   },
-
-]
-
-
+];
 
 export const ROUTES_ROOT: IRouteProps[] = [
-  {
-    name: "notification",
-    title: "notification",
-    icon: (color: string, focused: boolean) => {
-      return (
-        <Ionicons name="notifications-outline" size={size} color={color} />
-      );
-    },
-  },
   {
     name: "home",
     title: "home",
@@ -38,6 +26,15 @@ export const ROUTES_ROOT: IRouteProps[] = [
         <AntDesign name="like2" size={size} color={color} />
       ) : (
         <Feather name="home" size={size} color={color} />
+      );
+    },
+  },
+  {
+    name: "notification",
+    title: "notification",
+    icon: (color: string, focused: boolean) => {
+      return (
+        <Ionicons name="notifications-outline" size={size} color={color} />
       );
     },
   },
@@ -64,5 +61,3 @@ export const ROUTES_ROOT: IRouteProps[] = [
     },
   },
 ];
-
-

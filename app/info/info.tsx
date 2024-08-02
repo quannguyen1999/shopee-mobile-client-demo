@@ -1,41 +1,56 @@
-import { ActionsheetBackdrop, ActionsheetContent, ActionsheetDragIndicator, ActionsheetDragIndicatorWrapper, ActionsheetItem, ActionsheetItemText, Box, Button, ButtonIcon, ButtonText } from "@gluestack-ui/themed";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionHeader,
+  AccordionIcon,
+  AccordionItem,
+  AccordionTitleText,
+  AccordionTrigger,
+  Divider,
+} from "@gluestack-ui/themed";
 import { Text, View } from "react-native";
-import { Actionsheet } from '@gluestack-ui/themed';
+import { Actionsheet } from "@gluestack-ui/themed";
 import React from "react";
 import ProductHeader from "@/components/header/product/ProductHeader";
+import { AccordionContentText } from "@gluestack-ui/themed";
 const Info = () => {
-    const [showActionsheet, setShowActionsheet] = React.useState(false)
-    const handleClose = () => setShowActionsheet(!showActionsheet)
-    return (
-      <Box>
-        <Button onPress={handleClose}>
-          <ButtonText>Open</ButtonText>
-        </Button>
-        <Actionsheet isOpen={showActionsheet} onClose={handleClose} zIndex={999}>
-          <ActionsheetBackdrop />
-          <ActionsheetContent h="$72" zIndex={999}>
-            <ActionsheetDragIndicatorWrapper>
-              <ActionsheetDragIndicator />
-            </ActionsheetDragIndicatorWrapper>
-            <ActionsheetItem onPress={handleClose}>
-              <ActionsheetItemText>Delete</ActionsheetItemText>
-            </ActionsheetItem>
-            <ActionsheetItem onPress={handleClose}>
-              <ActionsheetItemText>Share</ActionsheetItemText>
-            </ActionsheetItem>
-            <ActionsheetItem onPress={handleClose}>
-              <ActionsheetItemText>Play</ActionsheetItemText>
-            </ActionsheetItem>
-            <ActionsheetItem onPress={handleClose}>
-              <ActionsheetItemText>Favourite</ActionsheetItemText>
-            </ActionsheetItem>
-            <ActionsheetItem onPress={handleClose}>
-                <ProductHeader />
-            </ActionsheetItem>
-          </ActionsheetContent>
-        </Actionsheet>
-      </Box>
-    )
+  return (
+    <Accordion
+      size="md"
+      variant="filled"
+      type="single"
+      isCollapsible={true}
+      isDisabled={false}>
+      <AccordionItem value="a">
+        <AccordionHeader>
+          <AccordionTrigger>
+            {({ isExpanded }) => {
+              return (
+                <>
+                  <AccordionTitleText>
+                    How do I place an order?
+                  </AccordionTitleText>
+                  {/* {isExpanded ? (
+                      <AccordionIcon as={ChevronUpIcon} className="ml-3"/>
+                    ) : (
+                      <AccordionIcon as={ChevronDownIcon} className="ml-3"/>
+                    )} */}
+                </>
+              );
+            }}
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionContent>
+          <AccordionContentText>
+            To place an order, simply select the products you want, proceed to
+            checkout, provide shipping and payment information, and finalize
+            your purchase.
+          </AccordionContentText>
+        </AccordionContent>
+      </AccordionItem>
+      <Divider />
+    </Accordion>
+  );
 };
 
 export default Info;
