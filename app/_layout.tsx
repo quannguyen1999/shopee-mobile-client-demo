@@ -10,12 +10,16 @@ import { useEffect, useState } from "react";
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import ProductHeader from "@/components/header/product/ProductHeader";
 import { MaterialIcons } from "@expo/vector-icons";
+import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed"
+import { config } from "@gluestack-ui/config" // Optional if you want to use default theme
 
 const MainLayout = () => {
   return (
+    <GluestackUIProvider config={config}>
     <Provider store={store}>
       <RootLayout />
     </Provider>
+    </GluestackUIProvider>
   );
 };
 
