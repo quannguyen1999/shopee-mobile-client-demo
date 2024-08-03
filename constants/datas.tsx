@@ -400,7 +400,7 @@ export const NOTIFICATION_BOTTOM = [
               Đơn hàng 6969696 đã hoàn thành
             </Text>
           }
-          iconLeft={<Entypo name="check" size={24} color="green" />}
+          iconLeft={<Entypo name="check" size={20} color="green" />}
           title={"Khuyến Mãi"}
         />
         <Divider />
@@ -412,7 +412,7 @@ export const NOTIFICATION_BOTTOM = [
               Đơn hàng 6969696 đã hoàn thành
             </Text>
           }
-          iconLeft={<FontAwesome name="remove" size={24} color="red" />}
+          iconLeft={<FontAwesome name="remove" size={20} color="red" />}
           title={"Khuyến Mãi"}
         />
       </>

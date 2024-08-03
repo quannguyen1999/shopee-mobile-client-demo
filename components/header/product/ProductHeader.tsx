@@ -52,7 +52,7 @@ const ProductHeader = ({ scroll = 0 }: ProductHeaderProps) => {
               left: "25%",
             }}
           >
-            <AntDesign name="arrowleft" size={24} />
+            <AntDesign name="arrowleft" size={20} />
           </Animated.Text>
         </Pressable>
       </View>

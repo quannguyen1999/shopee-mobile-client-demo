@@ -18,10 +18,8 @@ const Notification = () => {
         );
       })}
       <NotificationHeader />
-     
-     <AccordionCustom datas={NOTIFICATION_BOTTOM}/>
-      
-     
+
+      <AccordionCustom datas={NOTIFICATION_BOTTOM} />
     </ScrollView>
   );
 };
