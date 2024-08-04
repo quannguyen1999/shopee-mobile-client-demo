@@ -1,23 +1,15 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { Text, View } from "react-native";
-
-import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import Notification from "./notification";
 import NotificationHeader from "@/components/header/NotificationHeader";
-
-const Stack = createNativeStackNavigator();
+import { Stack } from "expo-router";
 
 export default function NotificationLayout() {
   return (
-    <Stack.Navigator>
+    <Stack>
       <Stack.Screen
-        name="Notification"
-        component={Notification}
+        name="index"
         options={{
           headerTitle: (props: any) => <NotificationHeader />,
         }}
       />
-    </Stack.Navigator>
+    </Stack>
   );
 }

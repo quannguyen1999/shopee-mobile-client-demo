@@ -1,25 +1,17 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { Text, View } from "react-native";
-
-import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import Live from "./live";
 import VideoHeader from "@/components/header/VideoHeader";
-
-const Stack = createNativeStackNavigator();
+import { Stack } from "expo-router";
 
 export default function LiveLayout() {
   return (
-    <Stack.Navigator>
+    <Stack>
       <Stack.Screen
-        name="Live"
-        component={Live}
+        name="index"
         options={{
           headerTransparent: true,
           headerTitle: (props: any) => <VideoHeader />,
         }}
       />
       
-    </Stack.Navigator>
+    </Stack>
   );
 }

@@ -1,19 +1,11 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { Text, View } from "react-native";
-
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
-import Info from "./order";
-import Order from "./order";
-
-const Stack = createNativeStackNavigator();
+import { Stack } from "expo-router";
 
 export default function layout() {
   return (
-    <Stack.Navigator>
+    <Stack>
       <Stack.Screen
-        name="order"
-        component={Order}
+        name="index"
         options={{
           headerTitle: (props: any) => <MenuHeader />,
           headerStyle: {
@@ -22,6 +14,6 @@ export default function layout() {
         }}
       />
       
-    </Stack.Navigator>
+    </Stack>
   );
 }
