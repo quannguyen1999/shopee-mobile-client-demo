@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from "react-native";
 import { useVideoPlayer, VideoView } from "expo-video";
 
 import { Dimensions } from "react-native";
@@ -17,7 +17,7 @@ interface LivePlayerProps {
   uri: string;
   isActive: boolean;
 }
-export const LivePlayer = ({ uri, isActive}: LivePlayerProps) => {
+export const LivePlayer = ({ uri, isActive }: LivePlayerProps) => {
   const video = React.useRef(null);
   return (
     <View style={styles.container}>
@@ -32,12 +32,13 @@ export const LivePlayer = ({ uri, isActive}: LivePlayerProps) => {
         shouldPlay={false}
         resizeMode={ResizeMode.COVER}
       />
-      <View style={styles.childContainer}>
+      <KeyboardAvoidingView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.childContainer} >
         <LiveNotification />
         <View style={styles.subChildContainer}>
-          <LiveInput isActive={isActive}/>
+          <LiveInput isActive={isActive} />
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </View>
   );
 };

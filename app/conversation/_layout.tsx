@@ -4,23 +4,19 @@ import { Text, View } from "react-native";
 
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import Info from "./info";
-
-const Stack = createNativeStackNavigator();
+import BackHeader from "@/components/header/BackHeader";
+import { Stack, Tabs } from "expo-router";
 
 export default function InfoLayout() {
   return (
-    <Stack.Navigator>
+    <Stack>
       <Stack.Screen
-        name="Info"
-        component={Info}
+        name="info"
         options={{
-          headerTitle: (props: any) => <MenuHeader />,
-          headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
-          },
+          headerShown: false,
+          headerTransparent: true
         }}
       />
-      
-    </Stack.Navigator>
+    </Stack>
   );
 }

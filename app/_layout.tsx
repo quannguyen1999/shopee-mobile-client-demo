@@ -102,10 +102,6 @@ const RootLayout = () => {
           name="product"
           options={{
             headerShown: false,
-            tabBarStyle: {
-              display: "none",
-            },
-          
             href: null,
           }}
         />

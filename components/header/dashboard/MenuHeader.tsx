@@ -1,18 +1,34 @@
-import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
+import { useRouter } from "expo-router";
 
 const MenuHeader = () => {
+  const router = useRouter();
+  const navigateToChatPage = () => {
+    router.push("/conversation")
+  }
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.inputContainer} >
+      <View style={styles.inputContainer}>
         <EvilIcons name="search" size={24} color="black" />
-        <TextInput style={styles.input} placeholder="Đồ ngủ cho chó" placeholderTextColor="red"/>
+        <TextInput
+          style={styles.input}
+          placeholder="Đồ ngủ cho chó"
+          placeholderTextColor="red"
+        />
         <EvilIcons name="camera" size={24} color="black" />
       </View>
 
-      <View >
+      <View>
         <MaterialCommunityIcons
           style={styles.iconItem}
           name="cart-outline"
@@ -21,14 +37,19 @@ const MenuHeader = () => {
         />
         <Text style={styles.iconNumberOfItem}>99+</Text>
       </View>
-      <View >
-        <AntDesign
-          style={styles.iconItem}
-          name="wechat"
-          size={26}
-          color="black"
-        />
-        <Text style={styles.iconNumberOfItem}>99+</Text>
+      <View>
+        <Pressable
+          android_ripple={{ color: "white" }}
+          onPress={navigateToChatPage}
+        >
+          <AntDesign
+            style={styles.iconItem}
+            name="wechat"
+            size={26}
+            color="black"
+          />
+          <Text style={styles.iconNumberOfItem}>99+</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
@@ -49,11 +70,11 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     gap: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    width: '70%'
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    backgroundColor: "white",
+    width: "70%",
   },
   input: {
     width: "75%",
@@ -62,8 +83,8 @@ const styles = StyleSheet.create({
     padding: 1,
     borderColor: "white",
     backgroundColor: "white",
-    color: 'red',
-    fontSize: 16
+    color: "red",
+    fontSize: 16,
   },
   iconItem: {
     position: "relative",

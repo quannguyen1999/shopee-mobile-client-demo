@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    // backgroundColor: 'red',
+    marginTop: 20,
     width: Dimensions.get('window').width,
   },
   containerLeft: {

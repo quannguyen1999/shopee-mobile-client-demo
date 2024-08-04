@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import { ResizeMode, Video } from "expo-av";
 import React from "react";
 import { FlatList, Animated } from "react-native";
@@ -7,7 +7,7 @@ import LivePlayer from "@/components/live/LivePlayer";
 import { BG_ORANGE_200 } from "@/constants/colors";
 import { useState } from "react";
 import { Dimensions } from "react-native";
-import Constants from 'expo-constants';
+import Constants from "expo-constants";
 export const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } =
   Dimensions.get("window");
 const Live = () => {
@@ -15,31 +15,30 @@ const Live = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={VIDEO}
-        renderItem={(item) => {
-          return <LivePlayer uri={item.item.uri} isActive={activeVideoIndex === item.index}/>;
-        }}
-        showsVerticalScrollIndicator
-        pagingEnabled
-        bounces={false}
-        onScroll={(e) => {
-          const index = Math.round(
-            e.nativeEvent.contentOffset.y / (WINDOW_HEIGHT - Constants.statusBarHeight)
-          );
-          setActiveVideoIndex(index);
-        }}
-        // keyExtractor={(item) => item.id}
-        // onScroll={Animated.event([{nativeEvent: {contentOffset: {x: scrollX}}}], {
-        //   useNativeDriver: false
-        // })}
-        scrollEventThrottle={32}
-        // onViewableItemsChanged={(val) => {
-        //   setCurrentIndex(val.viewableItems[0].index!)
-        // }}
-        // viewabilityConfig={viewConfig}
-        // ref={slideRef}
-      />
+      
+        <FlatList
+          data={VIDEO}
+          renderItem={(item) => {
+            return (
+              <LivePlayer
+                uri={item.item.uri}
+                isActive={activeVideoIndex === item.index}
+              />
+            );
+          }}
+          showsVerticalScrollIndicator
+          pagingEnabled
+          bounces={false}
+          onScroll={(e) => {
+            const index = Math.round(
+              e.nativeEvent.contentOffset.y /
+                (WINDOW_HEIGHT - Constants.statusBarHeight)
+            );
+            setActiveVideoIndex(index);
+          }}
+          scrollEventThrottle={32}
+        />
+      
     </View>
   );
 };

@@ -1,9 +1,15 @@
-import { Text, View } from "react-native"
+import { SafeAreaView, Text, View } from "react-native";
 
 const Info = () => {
-    return <View>
-        <Text>INfo page</Text>
-    </View>
-}
+  return (
+    <SafeAreaView>
+      <Text>INfo page</Text>
+
+      <Text>INfo page</Text>
+
+      <Text>INfo page</Text>
+    </SafeAreaView>
+  );
+};
 
 export default Info;
