@@ -105,7 +105,7 @@ const RootLayout = () => {
             tabBarStyle: {
               display: "none",
             },
-            headerTransparent: false,
+          
             href: null,
           }}
         />
