@@ -14,10 +14,8 @@ export default function InfoLayout() {
         name="Info"
         component={Info}
         options={{
-          headerTitle: (props: any) => <MenuHeader />,
-          headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
-          },
+          headerShown: false,
+          headerTransparent: true
         }}
       />
       
