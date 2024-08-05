@@ -13,50 +13,77 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { useRouter } from "expo-router";
 import { BG_ORANGE_600 } from "@/constants/colors";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { turnOpacity, turnToTop } from "@/util/animateUtil";
 
 const MenuHeader = () => {
   const router = useRouter();
   const animatedValue1 = useRef(new Animated.Value(0)).current;
+  const animatedValue2 = useRef(new Animated.Value(0)).current;
+  const animatedValue3 = useRef(new Animated.Value(0)).current;
+
+  const [opacity2, setOpacity2] = useState(0);
 
   const animLoopRef1 = useRef<any>();
+  const animLoopRef2 = useRef<any>();
+  const animLoopRef3 = useRef<any>();
+
+  const reset = () => {
+    console.log("work");
+    animatedValue1.setValue(0);
+    animatedValue2.setValue(0);
+
+    triggerAnimation();
+  };
 
   const triggerAnimation = useCallback(() => {
-    animLoopRef1.current = Animated.loop(
+    setOpacity2(0);
+    animLoopRef1.current = Animated.loop(Animated.sequence([
       Animated.timing(animatedValue1, {
         toValue: 1,
-        duration: 1000,
+        duration: 500,
         useNativeDriver: false,
-      })
-    );
-    animLoopRef1.current.start();
-  }, [animatedValue1]);
-
-  useEffect(() => {
-    triggerAnimation();
-  }, []);
-
-  const turnToTop = (animate: any) => {
-    return {
-      translateY: animate.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, -30],
+        delay: 3000,
       }),
-    };
-  };
+    ]));
 
-  const turnOpacity = (animate: any) => {
-    return animate.interpolate({
-      inputRange: [0, 0.7],
-      outputRange: [1, 0],
+    animLoopRef2.current = Animated.sequence([
+      Animated.timing(animatedValue2, {
+        toValue: 1,
+        duration: 500,
+        useNativeDriver: false,
+        delay: 1000,
+      }),
+    ]);
+
+    animLoopRef1.current.start(() => {
+      setOpacity2(1);
+      animLoopRef2.current.start();
     });
-  };
+  }, [animatedValue1, animatedValue2]);
 
   const animation1 = {
-    transform: [
-      turnToTop(animatedValue1),
-    ],
-    opacity: turnOpacity(animatedValue1),
+    transform: [turnToTop(animatedValue1, -30)],
+    opacity: animatedValue1.interpolate({
+      inputRange: [0, 1],
+      outputRange: [1, 1],
+    }),
+  };
+
+  const animation2 = {
+    transform: [turnToTop(animatedValue2, -30)],
+    opacity: animatedValue2.interpolate({
+      inputRange: [0, 1],
+      outputRange: [opacity2, 1],
+    }),
+  };
+
+  const animation3 = {
+    transform: [turnToTop(animatedValue3, -30)],
+    opacity: animatedValue3.interpolate({
+      inputRange: [0, 0.5, 1],
+      outputRange: [0, 1, 0],
+    }),
   };
 
   const navigateToChatPage = () => {
@@ -67,13 +94,19 @@ const MenuHeader = () => {
       <View style={styles.inputContainer}>
         <EvilIcons name="search" size={24} color="black" />
         <View style={styles.input} />
-        <Animated.Text style={[styles.animateValue1,animation1]}>
-          Quần xịp lọt khe
+        <Animated.Text style={[styles.animateValue1, animation1]}>
+          Mèo cởi chuồng
         </Animated.Text>
+        <Animated.Text style={[styles.animateValue1, animation2]}>
+          Quần xịp lột khe
+        </Animated.Text>
+        {/* <Animated.Text style={[styles.animateValue1, animation3]}>
+          Chó Shiba múa quạt
+        </Animated.Text> */}
         <EvilIcons name="camera" size={24} color="black" />
       </View>
 
-      <View>
+      <Pressable onPress={reset}>
         <MaterialCommunityIcons
           style={styles.iconItem}
           name="cart-outline"
@@ -81,12 +114,11 @@ const MenuHeader = () => {
           color="black"
         />
         <Text style={styles.iconNumberOfItem}>99+</Text>
-      </View>
+      </Pressable>
       <View>
         <Pressable
           android_ripple={{ color: "white" }}
-          onPress={navigateToChatPage}
-        >
+          onPress={navigateToChatPage}>
           <AntDesign
             style={styles.iconItem}
             name="wechat"
@@ -111,7 +143,7 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
     justifyContent: "center",
-  
+
     // backgroundColor: 'transparent'
   },
   inputContainer: {
@@ -121,7 +153,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "white",
     width: "70%",
-    zIndex: 1
+    zIndex: 1,
   },
   input: {
     width: "75%",
@@ -155,7 +187,8 @@ const styles = StyleSheet.create({
     left: "16%",
     zIndex: 1,
     color: BG_ORANGE_600,
-    fontSize: 15,
+    fontSize: 16,
+    opacity: 0,
     fontWeight: "600",
   },
 });

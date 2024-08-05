@@ -15,6 +15,9 @@ export const ROUTES_ROUTE_HIDE: IRouteProps[] = [
   {
     name: "order",
   },
+  {
+    name: "+not-found",
+  },
 ];
 
 export const ROUTES_ROOT: IRouteProps[] = [
