@@ -87,9 +87,8 @@ const RootLayout = () => {
             key={r.name}
             name={r.name}
             options={{
-              title: r.title,
-              headerTitle: (props: any) => <ProductHeader />,
-              headerTransparent: true,
+              title: r.title,  
+              headerShown: false,
               tabBarStyle: {
                 display: "none",
               },

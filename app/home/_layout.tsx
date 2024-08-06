@@ -17,13 +17,13 @@ export default function HomeLayout() {
   useEffect(() => {
     dispatch(updateCurrentUrl("HomePage"));
   }, []);
+  
   return (
     <Stack>
       {ROUTES_HOME.map((r: any, i) => (
         <Stack.Screen
           key={i}
           name={r.name}
-
           options={{
             headerTitle: (props: any) =>  <MenuHeader />,
             headerStyle: {
