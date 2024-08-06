@@ -42,9 +42,7 @@ const RootLayout = () => {
 
   return (
     <ThemeProvider value={DefaultTheme}>
-      <Tabs
-      // initialRouteName="home"
-      >
+      <Tabs>
         {ROUTES_ROOT.map((r: any, i) => (
           <Tabs.Screen
             key={r.name}
@@ -87,7 +85,7 @@ const RootLayout = () => {
             key={r.name}
             name={r.name}
             options={{
-              title: r.title,  
+              title: r.title,
               headerShown: false,
               tabBarStyle: {
                 display: "none",
@@ -102,6 +100,9 @@ const RootLayout = () => {
           options={{
             headerShown: false,
             href: null,
+            tabBarStyle: {
+              display: "none",
+            },
           }}
         />
       </Tabs>

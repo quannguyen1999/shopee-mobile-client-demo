@@ -29,7 +29,6 @@ const MenuHeader = () => {
   const animLoopRef3 = useRef<any>();
 
   const reset = () => {
-    console.log("work");
     animatedValue1.setValue(0);
     animatedValue2.setValue(0);
 
@@ -172,8 +171,8 @@ const styles = StyleSheet.create({
   iconNumberOfItem: {
     position: "absolute",
     top: -6,
-    right: -6,
-    fontSize: 10,
+    right: -8,
+    fontSize: 8,
     backgroundColor: "rgb(234 88 12)",
     color: "white",
     padding: 2,

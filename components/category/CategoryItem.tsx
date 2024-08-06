@@ -15,16 +15,19 @@ const CategoryItem = ({ item }: CategoryItemProps) => {
             width: "25%",
             height: "50%",
             padding: 5,
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
         >
           <Image
             style={[
               {
-                width: "100%",
-                height: "60%",
+                width: "70%",
+                height: "70%",
+                borderRadius: 10
               },
             ]}
-            contentFit="fill"
+            contentFit="cover"
             source={value.icon}
             transition={1000}
           />
