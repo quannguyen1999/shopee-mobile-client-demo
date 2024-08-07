@@ -7,6 +7,7 @@ import { BG_GRAY_400 } from "./colors";
 import NotificationItem from "@/components/notification/NotificationItem";
 import Transaction from "@/components/notification/NotificationTransaction";
 import { Divider } from "@gluestack-ui/themed";
+import ChatItemProps from "@/modal/ChatItemProps";
 export const CATEGORY_ITEMS = [
   {
     data: [
@@ -674,4 +675,224 @@ export const NOTIFICATION_BOTTOM = [
       </>
     ),
   },
+];
+
+export const LIST_CHAT_FAKE: ChatItemProps[] = [
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 2,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+  {
+    image: (
+      <Image
+        style={[
+          {
+            width: 60,
+            height: 60,
+            borderRadius: 9999
+          },
+        ]}
+        source={require("../assets/images/avatar/avatar.png")}
+      />
+    ),
+    type: 1,
+    title: "Sát thủ chuyên nghiệp",
+    message: "i will kiss your ass",
+    date: "26-07",
+  },
+ 
 ];
