@@ -28,12 +28,15 @@ const MenuHeader = () => {
   const animLoopRef2 = useRef<any>();
   const animLoopRef3 = useRef<any>();
 
+  //TODO test animate
   const reset = () => {
     animatedValue1.setValue(0);
     animatedValue2.setValue(0);
 
     triggerAnimation();
   };
+
+
 
   const triggerAnimation = useCallback(() => {
     setOpacity2(0);
@@ -88,6 +91,10 @@ const MenuHeader = () => {
   const navigateToChatPage = () => {
     router.push("/conversation");
   };
+
+  const navigateToOrderPage = () => {
+    router.push("/order");
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
@@ -105,7 +112,7 @@ const MenuHeader = () => {
         <EvilIcons name="camera" size={24} color="black" />
       </View>
 
-      <Pressable onPress={reset}>
+      <Pressable onPress={navigateToOrderPage}>
         <MaterialCommunityIcons
           style={styles.iconItem}
           name="cart-outline"

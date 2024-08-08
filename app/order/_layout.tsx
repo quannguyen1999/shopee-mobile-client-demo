@@ -1,3 +1,4 @@
+import OrderHeader from "@/components/header/OrderHeader";
 import MenuHeader from "@/components/header/dashboard/MenuHeader";
 import { Stack } from "expo-router";
 
@@ -7,9 +8,9 @@ export default function layout() {
       <Stack.Screen
         name="index"
         options={{
-          headerTitle: (props: any) => <MenuHeader />,
+          headerTitle: (props: any) => <OrderHeader />,
           headerStyle: {
-            backgroundColor: "rgb(249 115 22)",
+            backgroundColor: "white",
           },
         }}
       />

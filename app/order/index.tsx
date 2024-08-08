@@ -1,8 +1,9 @@
+import CheckoutItem from "@/components/checkout/CheckoutItem";
 import { Text, View } from "react-native"
 
 const Order = () => {
     return <View>
-        <Text>Order page</Text>
+        <CheckoutItem />
     </View>
 }
 
